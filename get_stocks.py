@@ -26,9 +26,9 @@ class stocks(alarmpi_content):
                  self.sconfig['path'] + \
                  ticker + \
                  self.sconfig['pathtail']
+        print apiurl
         #api = urllib2.urlopen('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%27'+ticker+'%27)%20&format=json&env=store://datatables.org/alltableswithkeys', timeout=4)
         api = urllib2.urlopen(apiurl, timeout=4)
-        print api
         response = api.read()
         response_dictionary = json.loads(response)
 
